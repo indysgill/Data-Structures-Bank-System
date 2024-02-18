@@ -1,8 +1,10 @@
 package BankingSystem;
+//import java.time.LocalDateTime;
 class SavingsAccount implements Account {
     private double balance;
-
+//    private final LocalDateTime accountCreationDate;
     public SavingsAccount(double initialBalance) {
+//        this.accountCreationDate = LocalDateTime.now();
         this.balance = initialBalance > 0 ? initialBalance : 0;
         Bank.listOfAccounts.add(this);
     }
@@ -29,6 +31,8 @@ class SavingsAccount implements Account {
         }
         return 0;
     }
+
+//    public LocalDateTime getAccountCreationDate() { return accountCreationDate;}
 
     public double getBalance() {
         return balance + calculateInterest();
