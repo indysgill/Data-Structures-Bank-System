@@ -1,4 +1,5 @@
 package BankingSystem;
+
 public interface Account {
     void deposit(double amount);
 
@@ -7,4 +8,7 @@ public interface Account {
     double calculateInterest();
 
     double getBalance();
+
+    String getName();
 }
+
