@@ -1,10 +1,14 @@
 package BankingSystem;
+
 class CurrentAccount implements Account {
     private double balance;
+    private final String name;
 
-    public CurrentAccount(double initialBalance) {
+    public CurrentAccount(double initialBalance, String name) {
         this.balance = initialBalance;
-        Bank.listOfAccounts.add(this);
+        this.name = name;
+        Bank.addAccount(this);
+
     }
 
     public void deposit(double amount) {
@@ -28,5 +32,9 @@ class CurrentAccount implements Account {
 
     public double getBalance() {
         return balance + calculateInterest();
+    }
+
+    public String getName(){
+      return name;
     }
 }
