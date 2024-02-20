@@ -1,5 +1,6 @@
 package BankingSystem;
 import java.util.ArrayList;
+
 class Bank {
     static ArrayList<Account> listOfAccounts = new ArrayList<>();
 
@@ -20,6 +21,16 @@ class Bank {
     }
 
     public static String printToString() { // Chris will fix
-        return "Bank{}" + listOfAccounts.toString();
+        String allAccounts = "";
+        for(int i = 0; i < listOfAccounts.size(); i++){
+            Account account =  listOfAccounts.get(i);
+            allAccounts += account.getName() + "," ;
+
+        }
+        allAccounts += "\nTotal account balances: " + calculateTotalBalance();
+
+        return allAccounts;
     }
+
+
 }
